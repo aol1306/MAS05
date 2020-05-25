@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 @Entity(name = "Product")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Product {
     @Id
     @GeneratedValue(generator="increment")

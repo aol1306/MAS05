@@ -37,13 +37,27 @@ public class Main {
             var p2 = new Product("special game");
             p2.setIntroductionDate(LocalDate.of(2019, 5, 1));
 
+            var b1 = new Book("star bars comic");
+            b1.setPages(150);
+
+            var pencil1 = new Pencil("pro pencil");
+            pencil1.setSharpness(2.5);
+
             var s1 = new Shop("TESKO");
             s1.addProduct(p1);
             s1.addProduct(p2);
 
+            var s2 = new Shop("EMBIK");
+            s2.addProduct(b1);
+            s2.addProduct(pencil1);
+
             session.save(p1);
             session.save(p2);
             session.save(s1);
+
+//            session.save(b1);
+//            session.save(pencil1);
+            session.save(s2);
 
             session.getTransaction().commit();
 

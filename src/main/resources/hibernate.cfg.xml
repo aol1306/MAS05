@@ -26,6 +26,8 @@
         <!-- mappings -->
         <mapping class="Product"/>
         <mapping class="Shop"/>
+        <mapping class="Book"/>
+        <mapping class="Pencil"/>
 
     </session-factory>
 </hibernate-configuration>
