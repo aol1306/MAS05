@@ -37,7 +37,7 @@ public class Main {
             var p2 = new Product("special game");
             p2.setIntroductionDate(LocalDate.of(2019, 5, 1));
 
-            var s1 = new Shop();
+            var s1 = new Shop("TESKO");
 //            s1.addProduct(p1);
 //            s1.addProduct(p2);
 

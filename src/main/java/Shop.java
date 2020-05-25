@@ -10,15 +10,15 @@ public class Shop {
     @GeneratedValue(generator="increment")
     @GenericGenerator(name="increment", strategy = "increment")
     private Long id;
-//    private String name;
+    private String name;
 //    private List<Product> products = new ArrayList<>();
 //
     public Shop() {}
-//
-//    public Shop(String name) {
-//        this.name = name;
-//    }
-//
+
+    public Shop(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
@@ -26,15 +26,15 @@ public class Shop {
     public void setId(Long id) {
         this.id = id;
     }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 //    @OneToMany(
 //            mappedBy = "shop",
 //            cascade = CascadeType.ALL,
