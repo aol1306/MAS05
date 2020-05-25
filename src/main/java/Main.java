@@ -37,14 +37,13 @@ public class Main {
             var p2 = new Product("special game");
             p2.setIntroductionDate(LocalDate.of(2019, 5, 1));
 
-//            var s1 = new Shop();
-//            s1.setName("TESKO");
+            var s1 = new Shop();
 //            s1.addProduct(p1);
 //            s1.addProduct(p2);
 
             session.save(p1);
             session.save(p2);
-//            session.save(s1);
+            session.save(s1);
 
             session.getTransaction().commit();
 
@@ -55,10 +54,10 @@ public class Main {
                 System.out.println(product);
             }
 
-//            List<Shop> shopList = session.createQuery("from Shop").list();
-//            for (var shop : shopList) {
-//                System.out.println(shop);
-//            }
+            List<Shop> shopList = session.createQuery("from Shop").list();
+            for (var shop : shopList) {
+                System.out.println(shop);
+            }
 
             session.getTransaction().commit();
 

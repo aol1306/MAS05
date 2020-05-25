@@ -23,7 +23,7 @@
 
         <!-- mappings -->
         <mapping class="Product"/>
-<!--        <mapping class="Shop"/>-->
+        <mapping class="Shop"/>
 
     </session-factory>
 </hibernate-configuration>

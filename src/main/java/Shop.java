@@ -1,22 +1,31 @@
-//import javax.persistence.*;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//@Entity(name = "Shop")
-//public class Shop {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private long id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity(name = "Shop")
+public class Shop {
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Long id;
 //    private String name;
 //    private List<Product> products = new ArrayList<>();
 //
-//    public long getId() {
-//        return id;
+    public Shop() {}
+//
+//    public Shop(String name) {
+//        this.name = name;
 //    }
 //
-//    public void setId(long id) {
-//        this.id = id;
-//    }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 //
 //    public String getName() {
 //        return name;
@@ -27,7 +36,7 @@
 //    }
 //
 //    @OneToMany(
-//            mappedBy = "Shop",
+//            mappedBy = "shop",
 //            cascade = CascadeType.ALL,
 //            orphanRemoval = true
 //    )
@@ -54,4 +63,4 @@
 //        }
 //        return ret;
 //    }
-//}
+}

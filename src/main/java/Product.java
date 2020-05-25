@@ -1,3 +1,5 @@
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -5,12 +7,14 @@ import java.time.Period;
 @Entity(name = "Product")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    private Long id;
     private String name;
     @Basic(optional = true)
     private Double weight;
     private LocalDate introductionDate;
+//    @ManyToOne
 //    private Shop shop;
 
     Product() {}
@@ -19,11 +23,11 @@ public class Product {
         this.setName(name);
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,7 +60,6 @@ public class Product {
         return Period.between(getIntroductionDate(), LocalDate.now()).getMonths();
     }
 
-//    @ManyToOne
 //    public Shop getShop() {
 //        return this.shop;
 //    }
@@ -74,5 +77,4 @@ public class Product {
         }
         return ret;
     }
-
 }
