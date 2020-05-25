@@ -38,8 +38,8 @@ public class Main {
             p2.setIntroductionDate(LocalDate.of(2019, 5, 1));
 
             var s1 = new Shop("TESKO");
-//            s1.addProduct(p1);
-//            s1.addProduct(p2);
+            s1.addProduct(p1);
+            s1.addProduct(p2);
 
             session.save(p1);
             session.save(p2);

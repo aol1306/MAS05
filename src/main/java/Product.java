@@ -14,8 +14,8 @@ public class Product {
     @Basic(optional = true)
     private Double weight;
     private LocalDate introductionDate;
-//    @ManyToOne
-//    private Shop shop;
+    @ManyToOne
+    private Shop shop;
 
     Product() {}
 
@@ -60,13 +60,13 @@ public class Product {
         return Period.between(getIntroductionDate(), LocalDate.now()).getMonths();
     }
 
-//    public Shop getShop() {
-//        return this.shop;
-//    }
-//
-//    public void setShop(Shop shop) {
-//        this.shop = shop;
-//    }
+    public Shop getShop() {
+        return this.shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
 
     @Override
     public String toString() {

@@ -18,8 +18,10 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- manage automatic database creation -->
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
-<!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
+<!--        <property name="hibernate.hbm2ddl.auto">create-drop</property>-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+<!--        <property name="hibernate.generate_statistics">true</property>-->
 
         <!-- mappings -->
         <mapping class="Product"/>

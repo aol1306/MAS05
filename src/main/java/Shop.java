@@ -11,8 +11,13 @@ public class Shop {
     @GenericGenerator(name="increment", strategy = "increment")
     private Long id;
     private String name;
-//    private List<Product> products = new ArrayList<>();
-//
+    @OneToMany(
+            mappedBy = "shop",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Product> products = new ArrayList<>();
+
     public Shop() {}
 
     public Shop(String name) {
@@ -35,32 +40,27 @@ public class Shop {
         this.name = name;
     }
 
-//    @OneToMany(
-//            mappedBy = "shop",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private List<Product> getProducts() {
-//        return this.products;
-//    }
-//
-//    public void addProduct(Product p) {
-//        getProducts().add(p);
-//        p.setShop(this);
-//    }
-//
-//    public void removeProduct(Product p) {
-//        getProducts().remove(p);
-//        p.setShop(null);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        var ret = "";
-//        ret += "Shop: " + this.name + "\n";
-//        for (var p : products) {
-//            ret += "Product: " + p.toString() + "\n";
-//        }
-//        return ret;
-//    }
+    private List<Product> getProducts() {
+        return this.products;
+    }
+
+    public void addProduct(Product p) {
+        getProducts().add(p);
+        p.setShop(this);
+    }
+
+    public void removeProduct(Product p) {
+        getProducts().remove(p);
+        p.setShop(null);
+    }
+
+    @Override
+    public String toString() {
+        var ret = "";
+        ret += "Shop: " + this.name + "\n";
+        for (var p : products) {
+            ret += "Product: " + p.toString() + "\n";
+        }
+        return ret;
+    }
 }
